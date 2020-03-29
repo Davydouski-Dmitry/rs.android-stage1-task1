@@ -2,9 +2,18 @@ package subtask3
 
 class BillCounter {
 
-    // TODO: Complete the following function
-    // The output could be "Bon Appetit" or the string with number(e.g "10")
     fun calculateFairlySplit(bill: IntArray, k: Int, b: Int): String {
-        throw NotImplementedError("Not implemented")
+
+        val totalSum = bill.sum()
+        val string = "Bon Appetit"
+
+        val annAllergic = bill[k]
+        val annSum = (totalSum - annAllergic) / 2
+
+        return if (annSum == b){
+            string
+        } else {
+            (b - annSum).toString()
+        }
     }
 }
